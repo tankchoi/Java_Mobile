@@ -5,12 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="-136dp"
+    tools:layout_editor_absoluteY="-18dp">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_height="76dp"
         android:background="?attr/colorPrimary"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
@@ -26,9 +28,9 @@
 
     <Button
         android:id="@+id/button_count"
-        android:layout_width="wrap_content"
+        android:layout_width="399dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="4dp"
         android:background="?attr/colorPrimary"
         android:onClick="countUp"
         android:text="@string/button_label_count"
@@ -39,10 +41,9 @@
 
     <Button
         android:id="@+id/button_toast"
-        android:layout_width="wrap_content"
+        android:layout_width="398dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="8dp"
         android:background="?attr/colorPrimary"
         android:onClick="showToast"
         android:text="@string/button_label_toast"
@@ -53,15 +54,20 @@
 
     <TextView
         android:id="@+id/show_count"
-        android:layout_width="471dp"
-        android:layout_height="605dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         android:background="#FFF000"
         android:gravity="center_vertical"
         android:text="@string/count_initial_value"
         android:textAlignment="center"
         android:textColor="?attr/colorPrimary"
-        android:textSize="120sp"
+        android:textSize="200sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="475dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_toast"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
