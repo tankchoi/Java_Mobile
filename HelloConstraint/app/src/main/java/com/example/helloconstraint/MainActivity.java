@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
                 ++mCount;
                 btnZero.setBackgroundColor(Color.parseColor("#E91E63"));
                 if (mCount % 2 == 0) {
-                    btnCount.setBackgroundColor(Color.parseColor("#4CAF50"));
+                    view.setBackgroundColor(Color.parseColor("#4CAF50"));
                 } else {
-                    btnCount.setBackgroundColor(Color.parseColor("#F44336"));
+                    view.setBackgroundColor(Color.parseColor("#F44336"));
                 }
                 if (txtCount != null) {
                     txtCount.setText(Integer.toString(mCount));
@@ -59,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
         btnZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnZero.setBackgroundColor(Color.parseColor("#ABABAB"));
+                view.setBackgroundColor(Color.parseColor("#ABABAB"));
+                btnCount.setBackgroundColor(Color.parseColor("#4CAF50"));
                 mCount = 0;
                 txtCount.setText(Integer.toString(mCount));
             }
