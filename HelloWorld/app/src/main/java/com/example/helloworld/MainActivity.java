@@ -1,5 +1,6 @@
 package com.example.helloworld;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,8 +31,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showToast(View view) {
-        Toast toast = Toast.makeText(this, R.string.toast_message, Toast.LENGTH_SHORT);
-        toast.show();
+//        Toast toast = Toast.makeText(this, R.string.toast_message, Toast.LENGTH_SHORT);
+//        toast.show();
+        Intent intent = new Intent(this, HelloActivity.class);
+        intent.putExtra("hello", mShowCount.getText().toString());
+        startActivity(intent);
     }
 
     public void countUp(View view) {
