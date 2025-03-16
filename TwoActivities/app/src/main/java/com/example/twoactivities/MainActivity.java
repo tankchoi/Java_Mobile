@@ -70,9 +70,23 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        // Khởi tạo tất cả các biến View.
         mMessageEditText = findViewById(R.id.editText_main);
         mReplyHeadTextView = findViewById(R.id.text_header_reply);
         mReplyTextView = findViewById(R.id.text_message_reply);
+
+        // Khôi phục trạng thái.
+        if (savedInstanceState != null) {
+            boolean isVisible = savedInstanceState.getBoolean("reply_visible");
+
+            if (isVisible) {
+                mReplyHeadTextView.setVisibility(View.VISIBLE);
+                String replyText = savedInstanceState.getString("reply_text");
+                mReplyTextView.setText(replyText);
+                mReplyTextView.setVisibility(View.VISIBLE);
+            }
+        }
+
         Log.d(LOG_TAG, "----------¬¬¬¬¬¬¬");
         Log.d(LOG_TAG, "onCreate");
 
@@ -97,6 +111,15 @@ public class MainActivity extends AppCompatActivity {
                 mReplyTextView.setVisibility(View.VISIBLE);
             }
         }
+    }
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (mReplyHeadTextView.getVisibility() == View.VISIBLE) {
+            outState.putBoolean("reply_visible", true);
+            outState.putString("reply_text",mReplyTextView.getText().toString());
+        }
+
     }
 
 }
